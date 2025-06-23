@@ -7,7 +7,10 @@ const { port } = require('./config/env');
 
 const app = express();
 
-app.use(cors());
+ app.use(cors({
+  origin: 'https://stay-finder-frontend-9pmx.vercel.app/', // Replace with your frontend URL
+  credentials: true, // Allow cookies to be sent with requests
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
